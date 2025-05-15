@@ -1,4 +1,9 @@
-# Python Exam Project – PGR107
+![Python Version](https://img.shields.io/badge/python-3.12.7%2B-blue)
+![Status](https://img.shields.io/badge/status-draft-brightgreen)
+![School](https://img.shields.io/badge/Kristiania%20University%20College-PGR107-red)
+
+
+# 🐍 Python Exam Project – PGR107
 
 
 This repository contains the source code for the PGR107 (Python Programming) Final Exam project, submitted in Spring 2025.
@@ -13,26 +18,27 @@ This project was completed as a group assignment by:
 
 ## 📝 Task Breakdown
 
-The exam consists of four programming tasks. We divided the responsibilities as follows:
+The exam consisted of four individual programming tasks. Responsibilities were divided as follows:
 
 
-- **Question 1** – Athiththiyan
-- **Question 2** – Elin  
-- **Question 3** – Athiththiyan  
-- **Question 4** – Elin
+- **Question 1: Word Guessing Game** – Athiththiyan
+- **Question 2: Library Management System** – Elin  
+- **Question 3: Bank Account Management System** – Athiththiyan  
+- **Question 4: Palindrome Checker** – Elin
 
 
 ## 📁 File Structure
 
-| File/Folder       | Description                                |
-|-------------------|--------------------------------------------|
-| `question1.py`    | Solution for Question 1  (Athiththiyan)    |
-| `question2.py`    | Solution for Question 2  (Elin)            |
-| `question3.py`    | Solution for Question 3  (Athiththiyan)    |
-| `question4.py`    | Solution for Question 4   (Elin)           |
-| `README.md`       | This project overview file                 |
+| File/Folder         | Description                                             |
+|---------------------|---------------------------------------------------------|
+| `Q1_WordGuess.py`   | Implementation of the Word Guessing Game (Athiththiyan) |
+| `Q2_Library.py`     | Implementation of the Library System  (Elin)            |
+| `Q3_BankAccount.py` | Implementation of the Bank Account System  (Ivan)       |
+| `Q4_Palindrome.py`  | Implementation of the Palindrome Checker   (Ivan)       |
+| `README.md`         | Project overview and documentation                      |
 
 ## ✅ Notes
 
 - All code follows the PGR107 exam requirements and Python conventions.
-- Each task was implemented independently according to the provided specification.
+- Tasks were distributed based on complexity to ensure a fair workload.
+- Each team member completed one or two main tasks and participated in code review for two additional tasks.
