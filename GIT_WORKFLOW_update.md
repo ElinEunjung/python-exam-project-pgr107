@@ -1,7 +1,7 @@
 
 # 🧰 Git Workflow – PGR107 Python Exam Project
 
-This file describes how Elin and Athi should work together in a clean and professional Git-based workflow for the final exam project.
+This file describes how we (Elin, Athi and Ivan) should work together in a clean and professional Git-based workflow for the final exam project.
 
 ---
 
@@ -101,18 +101,18 @@ git checkout -b athi/question-2-refactor
 
 ## 🧱 Best Practice After Checking Out a Branch
 
-Once you've created or checked out a branch (like `elin/question-2`), follow these steps:
+Once you've created or checked out a branch (like `athi/question-1`), follow these steps:
 
 ### ✅ 1. Create your solution file
 
 ```bash
-touch question2.py     # Or create it in your IDE
+touch q1_word_quess.py     # Or create it in your IDE
 ```
 
 ### ✅ 2. Make an initial commit
 
 ```bash
-git add question2.py
+git add q1_word_quess.py
 git commit -m "chore(question2): initial commit with file structure"
 ```
 
@@ -121,7 +121,7 @@ Use `chore` for setup commits, and later use `feat`, `fix`, or `refactor` as app
 ### ✅ 3. Push your local branch
 
 ```bash
-git push -u origin elin/question-2
+git push -u origin athi/question-1
 ```
 
 This sets the upstream so you can later just use `git push` without specifying the branch.
