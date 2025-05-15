@@ -34,7 +34,7 @@ Tasks were distributed based on complexity to ensure a fair workload. Each team 
 - Adding comments and Pythonic docstrings (`"""Explnation"""`) for all function/class
 - Implementing exception handling (`try`-`except` blocks).
 
-| Team member  | Main Responsiblity | Sub review Tasks|
+| Team member  | Main Responsiblity | Sub Review Tasks|
 | -------------| ------------------ |-----------------| 
 | Athiththiyan | Q1                 | Q2, Q4          |
 | Elin         | Q2                 | Q1, Q3          | 
