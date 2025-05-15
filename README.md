@@ -29,13 +29,13 @@ The exam consisted of four individual programming tasks. Responsibilities were d
 
 ## 📁 File Structure
 
-| File/Folder         | Description                                             |
-|---------------------|---------------------------------------------------------|
-| `Q1_WordGuess.py`   | Implementation of the Word Guessing Game (Athiththiyan) |
-| `Q2_Library.py`     | Implementation of the Library System  (Elin)            |
-| `Q3_BankAccount.py` | Implementation of the Bank Account System  (Ivan)       |
-| `Q4_Palindrome.py`  | Implementation of the Palindrome Checker   (Ivan)       |
-| `README.md`         | Project overview and documentation                      |
+| File/Folder           | Description                                             |
+|-----------------------|---------------------------------------------------------|
+| `q1_word_guess.py`    | Implementation of the Word Guessing Game (Athiththiyan) |
+| `q2_library.py`       | Implementation of the Library System  (Elin)            |
+| `q3_bank_account.py`  | Implementation of the Bank Account System  (Ivan)       |
+| `q4_palindrome.py`    | Implementation of the Palindrome Checker   (Ivan)       |
+| `README.md`           | Project overview and documentation                      |
 
 ## ✅ Notes
 
