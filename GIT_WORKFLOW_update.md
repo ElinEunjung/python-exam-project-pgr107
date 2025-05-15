@@ -89,9 +89,9 @@ git checkout -b athi/question-2-refactor
 
 | Task                        | Command Example                            |
 |-----------------------------|---------------------------------------------|
-| Create feature branch       | `git checkout -b elin/question-4`          |
+| Create feature branch       | `git checkout -b ivan/question-4`          |
 | Add + commit changes        | `git add .` → `git commit -m "message"`     |
-| Push to GitHub              | `git push origin elin/question-4`          |
+| Push to GitHub              | `git push origin ivan/question-4`          |
 | Sync with latest main       | `git checkout main` → `git pull origin main`|
 | Refactor other's solution   | `git checkout -b athi/question-4-refactor` |
 
