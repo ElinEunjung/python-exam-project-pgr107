@@ -8,37 +8,37 @@ This guide explains how we name our branches for clarity, consistency, and colla
 ## ✅ General Format
 
 ```
-[name]/q[number]_file_name_[optional_suffix]
+[name]/question-[number]-[optional-suffix]
 ```
 
 ### 🔹 Examples
 
 | Branch Name                    | Meaning                                    |
 |--------------------------------|--------------------------------------------|
-| `athi/q1_word_guess`           | Athi's main solution for Question 1        |
-| `elin/q2_library`              | Elin's main solution for Question 2        |
-| `ivan/q3_bank_account`         | Ivan's main solution for Question 3        |
-| `elin/q3_bank_account_alt`     | Elin's alternate version for Question 3    |
-| `athi/q1_word_guess_refactor`  | Refactored version of Athi's Q1 solution   |
-| `ivan/q2_library_test`         | Ivan's testing something related to Q2     |
+| `athi/question-1`              | Athi's main solution for Question 1        |
+| `elin/question-2`              | Elin's main solution for Question 2        |
+| `ivan/question-3`              | Ivan's main solution for Question 3        |
+| `elin/question-3-alt`          | Elin's alternate version for Question 3    |
+| `athi/question-1-refactor`     | Refactored version of Athi's Q1 solution   |
+| `ivan/question-2-test`         | Ivan's testing something related to Q2     |
 
 ---
 
 ## 🔖 Common Suffixes
 
-| Suffix       | Use Case                                                   |
+| Suffix       | Use Case                                                    |
 |--------------|-------------------------------------------------------------|
-| `_alt`       | Alternate approach or solution                              |
-| `_draft`     | Work-in-progress, not ready for merge                       |
-| `_refactor`  | Code improvement, same functionality                        |
-| `_fix`       | Fixes or bug corrections                                    |
-| `_test`      | For experiments, temporary testing                          |
-| `_review`    | Updated after peer review                                   |
-| `_final`     | Clean version ready for submission                          |
+| `-alt`       | Alternate approach or solution                              |
+| `-draft`     | Work-in-progress, not ready for merge                       |
+| `-refactor`  | Code improvement, same functionality                        |
+| `-fix`       | Fixes or bug corrections                                    |
+| `-test`      | For experiments, temporary testing                          |
+| `-review`    | Updated after peer review                                   |
+| `-final`     | Clean version ready for submission                          |
 
 You may combine suffixes if helpful:
 ```
-ivan/q1_word_guess_alt_refactor
+ivan/question-1-alt-refactor
 ```
 
 ---
