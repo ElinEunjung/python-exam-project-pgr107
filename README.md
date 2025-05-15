@@ -29,7 +29,7 @@ The exam consisted of four individual programming tasks. Responsibilities were d
 
 ## 📁 File Structure
 
-| File/Folder           | Description                                             |
+| File                  | Description                                             |
 |-----------------------|---------------------------------------------------------|
 | `q1_word_guess.py`    | Implementation of the Word Guessing Game (Athiththiyan) |
 | `q2_library.py`       | Implementation of the Library System  (Elin)            |
