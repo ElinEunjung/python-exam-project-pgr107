@@ -16,7 +16,7 @@ We use the **Conventional Commits** style to keep our commit history readable an
 ### 🔹 Example
 
 ```
-feat(question2): implement prime number checker
+feat(q2): implement prime number checker
 ```
 
 ---
