@@ -22,6 +22,7 @@ This group project was completed by the following students:
 - **Elin**           – Question 2
 - **Ivan**           – Question 3 and 4
 
+---
 
 ## 📝 Task Overview
 
@@ -32,6 +33,7 @@ The exam consisted of four individual programming tasks:
 - **Q3: Bank Account Management System** – Simulate basic banking functions via CLI and OOP.
 - **Q4: Palindrome Checker** – Verify whether a user-entered string is a palindrome.
 
+---
 
 ## ✍️ Task Distribution and Code Review
 
@@ -48,6 +50,7 @@ Each team member also performed peer review, which included:
 | Elin          | Q2                  | Q1, Q3            |
 | Ivan          | Q3 + Q4             | Q1, Q2            |
 
+---
 
 ## 📁 Project Structure
 
@@ -59,6 +62,7 @@ Each team member also performed peer review, which included:
 | `q4_palindrome.py`    | Palindrome Checker (by Ivan)                      |
 | `README.md`           | Project overview and documentation                |
 
+---
 
 ## ✅ Notes
 
