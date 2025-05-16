@@ -1,135 +1,107 @@
-
 # 🧰 Git Workflow – PGR107 Python Exam Project
 
-This file describes how we (Elin, Athi and Ivan) should work together in a clean and professional Git-based workflow for the final exam project.
+This guide outlines our Git-based collaboration process for the final exam project, followed by **Elin**, **Athiththiyan**, and **Ivan**.
+
+📌 See [Peer Review Process](./PEER_REVIEW_PROCESS.md)  
+📌 See [Peer Review Checklist](./PEER_REVIEW_CHECKLIST.md)  
+📌 See [Python Style Guide](./PYTHON_STYLE_GUIDE.md)
 
 ---
 
-## 🚀 INITIAL SETUP (First time only)
+## ✅ 1. First-Time Setup (One-Time Only)
 
 ```bash
-git clone https://github.com/your-username/python-exam-project-prg107.git
+git clone https://github.com/ElinEunjung/python-exam-project-prg107.git
 cd python-exam-project-prg107
-git checkout -b elin/question-2     # or athi/question-1
 ```
 
 ---
 
-## 📦 CREATE A NEW BRANCH (before you start working)
-
-Always pull latest `main` before branching:
+## 🌿 2. Always Start from Latest Main
 
 ```bash
 git checkout main
 git pull origin main
-git checkout -b elin/question-2     # example branch
 ```
-
-> 💡 Naming pattern: `[your-name]/question-[number]` or `-refactor`, `-alt` if needed
 
 ---
 
-## 🧑‍💻 WORKING LOCALLY
+## 🌱 3. Create a Feature Branch
 
 ```bash
-# After making changes
-git status                      # See modified files
-git add question2.py            # Stage file
-git commit -m "Add solution for Question 2 – Elin"  # Commit
+git checkout -b yourname/question-[number]
+# e.g.
+git checkout -b elin/question-2
 ```
 
 ---
 
-## ☁️ PUSH YOUR WORK
+## 🛠️ 4. Work on Your Code
 
 ```bash
-git push origin elin/question-2
+touch q2_library.py
+git status
+git add q2_library.py
+git commit -m "feat(q2): add checkout method"
 ```
 
 ---
 
-## 🔁 CREATE A PULL REQUEST (on GitHub)
+## ☁️ 5. Push Your Branch to GitHub
 
-1. Go to GitHub → your repo
+```bash
+git push -u origin elin/question-2
+```
+
+---
+
+## 🔁 6. Create a Pull Request (PR)
+
+1. Go to GitHub
 2. Click **"Compare & pull request"**
-3. Target: `main`
-4. Add comments, assign your teammate
-5. Click **"Create pull request"**
+3. Set base to `main`
+4. Assign 2 reviewers
+5. Add title + description
+6. Click **"Create pull request"**
 
 ---
 
-## 👀 REVIEW & MERGE A PR
+## 👀 7. Review & Merge
 
-1. Review the code (leave comments if needed)
-2. Click **"Merge pull request"**
-3. Delete the branch (optional)
+- Reviewers test and comment
+- If good: ✅ Approve
+- If issues: ❌ Request changes
+- Once approved: squash & merge
 
 ---
 
-## 🧲 PULL LATEST MAIN (often!)
+## 🔄 8. Sync with Main Regularly
 
 ```bash
 git checkout main
 git pull origin main
+git checkout your-branch
+git merge main
 ```
 
 ---
 
-## 🛠️ TRYING A TEAMMATE'S TASK OR MAKING REFACTOR
+## 🧪 9. Try or Refactor Someone's Code
 
 ```bash
-# After pulling main
-git checkout -b athi/question-2-refactor
-# Work on question2.py, push, and PR to main as usual
+git checkout main
+git pull origin main
+git checkout -b yourname/question-x-refactor
 ```
 
 ---
 
-## 🔄 SUMMARY TABLE
+## 📊 Quick Reference
 
-| Task                        | Command Example                            |
-|-----------------------------|---------------------------------------------|
-| Create feature branch       | `git checkout -b ivan/question-4`          |
-| Add + commit changes        | `git add .` → `git commit -m "message"`     |
-| Push to GitHub              | `git push origin ivan/question-4`          |
-| Sync with latest main       | `git checkout main` → `git pull origin main`|
-| Refactor other's solution   | `git checkout -b athi/question-4-refactor` |
-
-
-
----
-
-## 🧱 Best Practice After Checking Out a Branch
-
-Once you've created or checked out a branch (like `athi/question-1`), follow these steps:
-
-### ✅ 1. Create your solution file
-
-```bash
-touch q1_word_quess.py     # Or create it in your IDE
-```
-
-### ✅ 2. Make an initial commit
-
-```bash
-git add q1_word_quess.py
-git commit -m "chore(question2): initial commit with file structure"
-```
-
-Use `chore` for setup commits, and later use `feat`, `fix`, or `refactor` as appropriate.
-
-### ✅ 3. Push your local branch
-
-```bash
-git push -u origin athi/question-1
-```
-
-This sets the upstream so you can later just use `git push` without specifying the branch.
-
----
-
-| Action                            | Commit Message Example                         |
-|----------------------------------|------------------------------------------------|
-| Create empty or template file    | `chore(question2): initial commit with file`   |
-| Add input/output structure       | `feat(question2): setup input/output handling` |
-| Implement real logic             | `feat(question2): add binary search function`  |
+| Task                    | Command                                    |
+|-------------------------|---------------------------------------------|
+| New branch              | `git checkout -b ivan/question-3`          |
+| Commit changes          | `git add .` + `git commit -m "feat(...)"` |
+| Push to GitHub          | `git push -u origin branch-name`          |
+| Sync main               | `git checkout main && git pull`           |
+| Improve other's task    | `git checkout -b elin/question-4-alt`     |
