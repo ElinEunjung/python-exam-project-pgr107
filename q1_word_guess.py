@@ -3,7 +3,8 @@ import random
 
 
 
-def selectRandomLine(file):
+def select_random_line(file):
+    """Function that selects a random line from the .txt file as the word for the user to guess"""
     line = next(file)
     for num, a_line in enumerate(file, 2):
         if random.randrange(num):
@@ -12,7 +13,7 @@ def selectRandomLine(file):
     return line
     
 def print_random_line(file):
-    print(selectRandomLine(file))
+    print(select_random_line(file))
 
 def main():
     """The main function that runs the application"""
