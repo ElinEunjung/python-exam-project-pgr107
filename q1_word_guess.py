@@ -13,7 +13,22 @@ def select_random_line(file):
     return line
     
 def display_question(file):
-    print(select_random_line(file))
+    """Fuction that displayes the blanks and the letters as you guess them"""
+    # A temporary value to get the correct answer
+    temp_value = select_random_line(file)
+    
+    # A 'Permenant' variable to hold the answer without calling the select_random_line function
+    # Also removes case sensetivity and leading/trailing white spaces
+    correct_answer = temp_value.strip()
+    # A intiger that representes the number of letters 
+    n_letters = len(correct_answer) 
+    
+    # The blank lines used as a plaseholder for the letters of the chosen word
+    letter_display = correct_answer.replace(correct_answer, "_" * len(correct_answer))
+    
+    
+    print(f"The word has {n_letters} letters you have four guesses")
+    print(letter_display)  
 
 def main():
     """The main function that runs the application"""
