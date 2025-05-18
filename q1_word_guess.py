@@ -23,14 +23,21 @@ def display_question(file):
     # A intiger that representes the number of letters 
     n_letters = len(correct_answer) 
     
+    # A intiger variable denoting the number of guesses that the user has left
     n_guesses = 4
     
     # The blank lines used as a plaseholder for the letters of the chosen word
     letter_display = correct_answer.replace(correct_answer, "_" * len(correct_answer))
     
-    
-    print(f"The word has {n_letters} letters you have {n_guesses} guesses")
-    print(letter_display)  
+    # loop to update the diplay as you guess letters 
+    for i in range(n_guesses +1):
+        print(f"The word has {n_letters} letters you have {n_guesses} guesses left")
+        print(letter_display)
+        n_guesses-=1
+        
+
+def user_input(correct_answer, letter_display, n_guesses):
+    pass
 
 def main():
     """The main function that runs the application"""
