@@ -23,11 +23,13 @@ def display_question(file):
     # A intiger that representes the number of letters 
     n_letters = len(correct_answer) 
     
+    n_guesses = 4
+    
     # The blank lines used as a plaseholder for the letters of the chosen word
     letter_display = correct_answer.replace(correct_answer, "_" * len(correct_answer))
     
     
-    print(f"The word has {n_letters} letters you have four guesses")
+    print(f"The word has {n_letters} letters you have {n_guesses} guesses")
     print(letter_display)  
 
 def main():
