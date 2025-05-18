@@ -12,7 +12,7 @@ def select_random_line(file):
         line = a_line
     return line
     
-def print_random_line(file):
+def display_question(file):
     print(select_random_line(file))
 
 def main():
@@ -21,7 +21,7 @@ def main():
     #Opening a file 
     file = open("word_guess.txt", "r")
     
-    print_random_line(file)
+    display_question(file)
     
     file.close()
 
