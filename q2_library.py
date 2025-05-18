@@ -5,13 +5,13 @@ class Book:
         self.author = author
         self.num_pages = num_pages
         self.is_borrowed = is_borrowed
-        
-        
+              
     def __str__(self):
-        status = "Borrowed" if self.is_borrowed else "Availiable"
-        return f'\n<Title: {self.title} | Author: {self.author} | Pages: {self.num_pages} | Status: {status}>\n'
-    
-
+        status = "Borrowed" if self.is_borrowed else "Available"
+        return (
+            f'\n<Title: {self.title} | Author: {self.author}'
+            f'| Pages: {self.num_pages} | Status: {status}>\n'
+        )
 
 class Library:
     """Entity responsible for managing books"""
@@ -27,13 +27,11 @@ class Library:
         if not book:
             print(f"No book found title {title} in the library.\n")
             return
-
         else: 
             self.books.remove(book)
             print(f"The Book <{title}> removed from the library.\n")
             return
-        
-    
+           
     def get_book_by_title(self, title):
         """Gets only book title"""
         for b in self.books:
@@ -42,14 +40,13 @@ class Library:
         return None
     
     def get_valid_book(self, title):
-        """Get a book by title and prints an error if not found"""
+        """Gets a book by title and prints an error if not found"""
         book = self.get_book_by_title(title)
         if not book:
-            print(f"The book <{title}> does not belongs to the library.\n" )
+            print(f"The book <{title}> does not belong to the library.\n" )
             return None
         return book
-              
-       
+                    
     def check_in(self, title):
         """Allows library visitors to return a book"""     
         book = self.get_valid_book(title)
@@ -57,16 +54,15 @@ class Library:
             return
         
         # checks if the book is unavalible (borrowed)        
-        if book.is_borrowed == True:
+        if book.is_borrowed == True: # add "== True" for clarity
             book.is_borrowed = False # update status to avaliable
             # provide message for for check-in    
-            print(f"The book <{title}> has returned successfully.\n" )            
+            print(f"The book <{title}> has been checked in successfully.\n" )            
             return
         else: 
             print(f"The book <{title}> was not borrowed.\n" )
             return
-
-    
+   
     def check_out(self, title):
         """Allows library visitors to borrow a book"""
         book = self.get_valid_book(title)
@@ -80,25 +76,27 @@ class Library:
             print(f"The book <{title}> has been checked out successfully.\n" )            
             return
         else: 
-            print(f"The book <{title}> has checked out already.\n" )
-        
-    
+            print(f"The book <{title}> has already been checked out.\n" )
+            
     def __str__(self):
         if not self.books:  # if len(books) == 0:
             return "No books in the library."
-        
-        
+          
+        """ Changed this code block followed by pythonic style guide
         all_book_list = []       
         for b in self.books:       
             all_book_list.append(str(b))
             res = '\n'.join(all_book_list) # concatenate 
-            
-        return '[List of books in the library]\n' + f'{res}\n'
+        """   
+        
+        all_book_list = '\n'. join(str(b) for b in self.books)
+        return '[List of books in the library]\n' + f'{all_book_list}\n'
     
 
 if __name__ == "__main__":
     """Only runs if this script is the main file 
-       It's ok to delete (__name__ == "__main__") for our exam but I included it to show some professionalism"""
+       It's ok to delete (__name__ == "__main__") for our exam 
+       but I included it to show some professionalism"""
     
     # create a Library instance
     myLibrary = Library()  
@@ -110,11 +108,9 @@ if __name__ == "__main__":
     myLibrary.add_book(b1)
     myLibrary.add_book(b2)
     myLibrary.add_book(b3)
-
-    
-    
+   
     # attempt to check out a book
-    myLibrary.check_out("Vegetarian") # not registed book
+    myLibrary.check_out("Vegetarian") # not registered book
     myLibrary.check_out("The Art of War")
 
     # attempt to return a book
