@@ -8,7 +8,7 @@ class Book:
         
         
     def __str__(self):
-        status = "Borrowed" if self.is_borrowed else "Avaliable"
+        status = "Borrowed" if self.is_borrowed else "Availiable"
         return f'\n<Title: {self.title} | Author: {self.author} | Pages: {self.num_pages} | Status: {status}>\n'
     
 
@@ -20,40 +20,45 @@ class Library:
     
     def add_book(self, book):                     
         self.books.append(book)
-        # print(f"New book {book}added successfully.\n ")
+        print(f"New book {book}added successfully.\n ")
     
     def remove_book(self, title):
-        for b in self.books:
-            if b.title == title:
-                self.books.remove(b)
-                print(f"The Book <{title}> removed from the library.\n")
-                return
+        book = self.get_book_by_title(title)
+        if not book:
+            print(f"No book found title {title} in the library.\n")
+            return
+
+        else: 
+            self.books.remove(book)
+            print(f"The Book <{title}> removed from the library.\n")
+            return
         
-        print(f"No book found title {title} in the library.\n")
     
     def get_book_by_title(self, title):
-        """Function to get only book title"""
+        """Gets only book title"""
         for b in self.books:
             if b.title == title:
                 return b       
         return None
-        
-    def is_registered(self, title):
-        """Function to verify if the book is registered."""
-        # checks if the book exists by seeing if get_book_by_title returns a value
-        return self.get_book_by_title(title) is not None 
-       
-        
-    def check_in(self, title):
-        """Function allows library visitors to return a book"""     
+    
+    def get_valid_book(self, title):
+        """Get a book by title and prints an error if not found"""
         book = self.get_book_by_title(title)
-        if not book:           
-            print(f"The book <{title}> does not belongs to the libary.\n" )
+        if not book:
+            print(f"The book <{title}> does not belongs to the library.\n" )
+            return None
+        return book
+              
+       
+    def check_in(self, title):
+        """Allows library visitors to return a book"""     
+        book = self.get_valid_book(title)
+        if not book:
             return
         
         # checks if the book is unavalible (borrowed)        
         if book.is_borrowed == True:
-            book.is_borrowed = False # update the books status to avaliable
+            book.is_borrowed = False # update status to avaliable
             # provide message for for check-in    
             print(f"The book <{title}> has returned successfully.\n" )            
             return
@@ -63,12 +68,20 @@ class Library:
 
     
     def check_out(self, title):
-        """Function allows library visitors to borrow a book"""
-        pass
-    
-        """TODO: Implement this later
+        """Allows library visitors to borrow a book"""
+        book = self.get_valid_book(title)
+        if not book:
+            return
+        
         # checks if the books is avalialbe
-        # marks it as checked out if possible"""
+        if book.is_borrowed == False:
+            book.is_borrowed = True # update status to unavaliable
+            # provide message for for check-out   
+            print(f"The book <{title}> has been checked out successfully.\n" )            
+            return
+        else: 
+            print(f"The book <{title}> has checked out already.\n" )
+        
     
     def __str__(self):
         if not self.books:  # if len(books) == 0:
@@ -84,7 +97,8 @@ class Library:
     
 
 if __name__ == "__main__":
-    """Only runs if this script is the main file (Ok to delete (__name__ == "__main__") for our exam but I included it to show some professionalism)"""
+    """Only runs if this script is the main file 
+       It's ok to delete (__name__ == "__main__") for our exam but I included it to show some professionalism"""
     
     # create a Library instance
     myLibrary = Library()  
@@ -92,23 +106,25 @@ if __name__ == "__main__":
     # add multiple books to the library
     b1 = Book("The Art of War", "Sun Tzu", 150)
     b2 = Book("Tao Te Ching", "Lao zi", 100)
-    b3 = Book("The Art of War", "Sun Tzu", 150)
-    b4 = Book("Dream of the Red Chamber", "Cao Xueqin", 550)   
+    b3 = Book("Dream of the Red Chamber", "Cao Xueqin", 550)  
     myLibrary.add_book(b1)
     myLibrary.add_book(b2)
     myLibrary.add_book(b3)
-    myLibrary.add_book(b4)
+
     
     
     # attempt to check out a book
-    myLibrary.check_in("Vegitarian")
+    myLibrary.check_out("Vegetarian") # not registed book
+    myLibrary.check_out("The Art of War")
+
     # attempt to return a book
-    
+    myLibrary.check_in("The Art of War")
+
     # remove a book from the library
-    #myLibrary.remove_book(b1.title)
-    
-    
+    myLibrary.remove_book(b2.title)
+       
     # print the list of books to verify the results
+    print(myLibrary)
 
         
 
