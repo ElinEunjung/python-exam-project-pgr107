@@ -20,7 +20,7 @@ def display_question(file):
     n_letters = len(correct_answer) 
     
     # A intiger variable denoting the number of guesses that the user has left
-    n_guesses = n_letters + 3
+    n_guesses = n_letters
     
     # The blank lines used as a plaseholder for the letters of the chosen word
     letter_display =  "_" * len(correct_answer)
@@ -35,7 +35,7 @@ def display_question(file):
         user_input = input("Letter: ")
         user_input = user_input[0].lower().strip()
         if(user_input in letter_display):
-            print("You have alredy guessed this letter")
+            print("You have alredy guessed this")
         elif(user_input in correct_answer):
             print("Corret")
             letter_display = update_display(correct_answer, user_input, letter_display)
