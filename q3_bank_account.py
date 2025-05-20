@@ -32,6 +32,7 @@ class Menu:
         if user_input in {"1", "2", "3", "4", "5", "6"}:
             return int(user_input)
         else:
+            print("Invalid input. Please enter number next time.")
             return None
 
     def print_menu(self):
