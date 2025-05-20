@@ -46,19 +46,43 @@ class BankAccount:
         self.interest = interest
 
     def deposit(self):
-        amount = float(input("Enter amount to deposit: "))
-        self.balance += amount
-        print(f"Your balance was updated, now: {self.balance}")
+        try:
+            amount = float(input("Enter amount to deposit: "))
+            if amount <= 0:
+                print("Please enter a positive number")
+            else:
+                self.balance += amount
+                print(f"Your balance was updated, now: {self.balance}")
+        except ValueError:
+            print("Please enter a number next time.")
+
 
     def withdraw(self):
-        amount = float(input("Enter amount to deposit: "))
-        self.balance -= amount
-        print(f"Your balance was updated, now: {self.balance}")
+        try:
+            amount = float(input("Enter amount to withdraw: "))
+            if amount <= 0:
+                print("Please enter a positive number")
+            else:
+                if amount <= self.balance:
+                    self.balance -= amount
+                    print(f"Your balance was updated, now: {self.balance}")
+                else:
+                    print("Not enough funds in account to withdraw that amount.")
+        except ValueError:
+            print("Please enter a number next time.")
+
 
     def add_interests(self):
-        interest = float(input("Add interest rate, user numbers like 2.50: "))
-        self.interest = interest
-        print(f"Interest was added, after 1 year you may earn: {self.interest / 100 * self.balance}")
+        try:
+            interest = float(input("Add interest rate, user numbers like 2.50: "))
+            if interest > 0:
+                self.interest = interest
+                print(f"Interest was added, after 1 year you may earn: {self.interest / 100 * self.balance}")
+            else:
+                print("Please enter a positive interest rate next time.")
+        except ValueError:
+            print("Please enter a number next time.")
+
 
     def get_balance(self):
         return self.balance
