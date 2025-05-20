@@ -8,8 +8,7 @@
 # }
 
 class Menu:
-    """Class for controlling flow of the program"""
-
+    """Class for controlling the program flow"""
     def __init__(self):
         self.options = [        # creates a list with pre-defined options
             "1. Open a new account",
@@ -39,9 +38,8 @@ class Menu:
         for option in self.options:
             print(option)
 
-
 class BankAccount:
-
+    """Entity responsible for managing bank accounts"""
     def __init__(self, balance = 0.0, interest = 0.0):
         self.balance = balance
         self.interest = interest
@@ -57,7 +55,6 @@ class BankAccount:
         except ValueError:
             print("\033[91mPlease enter a number next time.\033[0m")
 
-
     def withdraw(self):
         try:
             amount = float(input("Enter amount to withdraw: "))
@@ -72,7 +69,6 @@ class BankAccount:
         except ValueError:
             print("\033[91mPlease enter a number next time.\033[0m")
 
-
     def add_interests(self):
         try:
             interest = float(input("Add interest rate, user numbers like 2.50: "))
@@ -84,9 +80,12 @@ class BankAccount:
         except ValueError:
             print("\033[91mPlease enter a number next time.\033[0m")
 
-
     def get_balance(self):
         return self.balance
+
+    def __str__(self):
+        interest = f" | Interest rate: {self.interest}%" if self.interest > 0 else ""
+        return f"Account balance: {self.balance}{interest}"
 
 
 if __name__ == "__main__":
@@ -96,7 +95,7 @@ if __name__ == "__main__":
     bank_account_1 = BankAccount()
     menu = Menu()
     user_choice = menu.get_input()
-    # if user_choice is not None:
+
     while user_choice != 6:
         if user_choice is None:
             print("\033[91mPlease enter a valid option.\033[0m")
