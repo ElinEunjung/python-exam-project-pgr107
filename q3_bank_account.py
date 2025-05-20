@@ -50,27 +50,27 @@ class BankAccount:
         try:
             amount = float(input("Enter amount to deposit: "))
             if amount <= 0:
-                print("Please enter a positive number")
+                print("\033[91mPlease enter a positive number.\033[0m")
             else:
                 self.balance += amount
                 print(f"Your balance was updated, now: {self.balance}")
         except ValueError:
-            print("Please enter a number next time.")
+            print("\033[91mPlease enter a number next time.\033[0m")
 
 
     def withdraw(self):
         try:
             amount = float(input("Enter amount to withdraw: "))
             if amount <= 0:
-                print("Please enter a positive number")
+                print("\033[91mPlease enter a positive number.\033[0m")
             else:
                 if amount <= self.balance:
                     self.balance -= amount
                     print(f"Your balance was updated, now: {self.balance}")
                 else:
-                    print("Not enough funds in account to withdraw that amount.")
+                    print("\033[91mNot enough funds in account to withdraw that amount.\033[0m")
         except ValueError:
-            print("Please enter a number next time.")
+            print("\033[91mPlease enter a number next time.\033[0m")
 
 
     def add_interests(self):
@@ -80,9 +80,9 @@ class BankAccount:
                 self.interest = interest
                 print(f"Interest was added, after 1 year you may earn: {self.interest / 100 * self.balance}")
             else:
-                print("Please enter a positive interest rate next time.")
+                print("\033[91mPlease enter a positive interest rate next time.\033[0m")
         except ValueError:
-            print("Please enter a number next time.")
+            print("\033[91mPlease enter a number next time.\033[0m")
 
 
     def get_balance(self):
@@ -99,7 +99,7 @@ if __name__ == "__main__":
     # if user_choice is not None:
     while user_choice != 6:
         if user_choice is None:
-            print("Please enter a valid option.")
+            print("\033[91mPlease enter a valid option.\033[0m")
         elif user_choice == 1:
             print("Opened a new account")
         elif user_choice == 2:
