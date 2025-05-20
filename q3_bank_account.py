@@ -65,18 +65,22 @@ class BankAccount:
                     self.balance -= amount
                     print(f"Your balance was updated, now: {self.balance}")
                 else:
-                    print("\033[91mNot enough funds in account to withdraw that amount.\033[0m")
+                    print("\033[91mNot enough funds in account to withdraw "
+                          "that amount.\033[0m")
         except ValueError:
             print("\033[91mPlease enter a number next time.\033[0m")
 
     def add_interests(self):
         try:
-            interest = float(input("Add interest rate, user numbers like 2.50: "))
+            interest = float(input("Add interest rate, "
+                                   "use numbers like 2.50: "))
             if interest > 0:
                 self.interest = interest
-                print(f"Interest was added, after 1 year you may earn: {self.interest / 100 * self.balance}")
+                print(f"Interest was added, after 1 year you may earn: "
+                      f"{self.interest / 100 * self.balance}")
             else:
-                print("\033[91mPlease enter a positive interest rate next time.\033[0m")
+                print("\033[91mPlease enter a positive "
+                      "interest rate next time.\033[0m")
         except ValueError:
             print("\033[91mPlease enter a number next time.\033[0m")
 
@@ -84,7 +88,8 @@ class BankAccount:
         return self.balance
 
     def __str__(self):
-        interest = f" | Interest rate: {self.interest}%" if self.interest > 0 else ""
+        interest = f" | Interest rate: {self.interest}%"\
+            if self.interest > 0 else ""
         return f"Account balance: {self.balance}{interest}"
 
 
