@@ -1,29 +1,24 @@
-# options = {
-#     1: "Open a new account",
-#     2: "Deposit money into your account",
-#     3: "Withdraw money from your account",
-#     4: "Add interests to your account",
-#     5: "Get the current balance of your account",
-#     6: "Quit"
-# }
+options = [         # creates a list with pre-defined options
+    "1. Open a new account",
+    "2. Deposit money into your account",
+    "3. Withdraw money from your account",
+    "4. Add interests to your account",
+    "5. Get the current balance of your account",
+    "6. Quit"
+]
 
 class Menu:
     """Class for controlling the program flow"""
     def __init__(self):
-        self.options = [        # creates a list with pre-defined options
-            "1. Open a new account",
-            "2. Deposit money into your account",
-            "3. Withdraw money from your account",
-            "4. Add interests to your account",
-            "5. Get the current balance of your account",
-            "6. Quit"
-        ]
+        self.options = options
 
     def add_option(self):
-        option = input("Write an option you would like to add: ")
-        # option = str(len(self.options)) + ". "  + option
+        self.print_menu()
+        option = input("\nWrite an option you would like to add: ")
+        option = str(len(self.options)+1) + ". "  + option
         self.options.append(option)
-        print(f"New option {option} added successfully.\n ")
+        print(f"New option {option} added successfully, updated menu:\n ")
+        self.print_menu()
 
     def get_input(self):
         self.print_menu()
@@ -117,6 +112,9 @@ if __name__ == "__main__":
         print()
         user_choice = menu.get_input()
     print("Exiting program")
+
+    # Here I am calling method add_option() to check its functionality
+    menu.add_option()
 
 
 
