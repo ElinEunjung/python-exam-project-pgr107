@@ -1,6 +1,6 @@
 #Importering
 import random
-
+import re
 
 def select_random_line(file):
     """Function that selects a random line from the .txt file as the word for the user to guess"""
@@ -11,7 +11,6 @@ def select_random_line(file):
             continue
         line = a_line
     return line.lower().strip()
-    
     
 def display_question(file):
     """Fuction that displayes the blanks and the letters as you guess them"""
@@ -28,9 +27,6 @@ def display_question(file):
     
     # loop to update the diplay as you guess letters 
     while n_guesses>0:
-        if(letter_display == correct_answer):
-            victory(correct_answer)
-            break
         print(f"The word has {n_letters} and you have {n_guesses} left.\n")
         print(f"Your word: {letter_display}")
         user_input = input("Letter: ")
@@ -40,9 +36,12 @@ def display_question(file):
         elif(user_input in correct_answer):
             print("Corret")
             letter_display = update_display(correct_answer, user_input, letter_display)
-            
         else:
             print("wrong")
+        
+        if(letter_display == correct_answer):
+            victory(correct_answer)
+            break
         
         n_guesses -= 1
     
@@ -62,10 +61,8 @@ def update_display(correct_answer, user_input, letter_display):
     # got the idea of "".join() from here https://stackoverflow.com/questions/1228299/changing-a-character-in-a-string   
     return "".join(letter_display)
   
-  
 def victory(corret_answer):
     print(f"You won. the word is indeed {corret_answer}")  
-    
     
 def main():
     """The main function that runs the application"""
@@ -79,6 +76,5 @@ def main():
         file.close()
     except FileNotFoundError:
         print("Error: word_guess.txt not found")
-
 
 main()    
