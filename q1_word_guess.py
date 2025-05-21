@@ -14,8 +14,11 @@ def select_random_line(file):
     
     
 def display_question(file):
-    """Fuction that displayes the blanks and the letters as you guess them"""
+    """Fuction that displays the blanks and the letters as you guess them"""
     correct_answer = select_random_line(file)
+    
+    # A array of letters not in the answer
+    wrong_letters = []
     
     # A intiger that representes the number of letters 
     n_letters = len(correct_answer) 
@@ -26,19 +29,31 @@ def display_question(file):
     # The blank lines used as a plaseholder for the letters of the chosen word
     letter_display =  "_" * len(correct_answer)
     
-    # loop to update the diplay as you guess letters 
+    # Loop to update the diplay as you guess letters 
     while n_guesses>0:
         print(f"The word has {n_letters} and you have {n_guesses} left.\n")
         print(f"Your word: {letter_display}")
+        
         user_input = input("Letter: ")
-        user_input = user_input[0].lower().strip()
-        if(user_input in letter_display):
+        user_input = user_input.lower().strip()
+        
+        # If blocks used for input validation
+        if(len(user_input)>1):
+            print("The input is to long, please enter a single letter and then press the enter key")
+            continue
+        if (not user_input.isalpha()):
+            print("Please enter a letter")
+            continue
+        
+        # If black used to both check if you 
+        if(user_input in letter_display or user_input in wrong_letters):
             print("You have alredy guessed this")
         elif(user_input in correct_answer):
             print("Corret")
             letter_display = update_display(correct_answer, user_input, letter_display)
         else:
             print("wrong")
+            wrong_letters.append(user_input)
         
         if(letter_display == correct_answer):
             victory(correct_answer)
