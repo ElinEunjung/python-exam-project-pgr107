@@ -2,6 +2,7 @@
 import random
 import re
 
+
 def select_random_line(file):
     """Function that selects a random line from the .txt file as the word for the user to guess"""
     line = next(file)
@@ -11,6 +12,7 @@ def select_random_line(file):
             continue
         line = a_line
     return line.lower().strip()
+    
     
 def display_question(file):
     """Fuction that displayes the blanks and the letters as you guess them"""
@@ -61,8 +63,10 @@ def update_display(correct_answer, user_input, letter_display):
     # got the idea of "".join() from here https://stackoverflow.com/questions/1228299/changing-a-character-in-a-string   
     return "".join(letter_display)
   
+  
 def victory(corret_answer):
     print(f"You won. the word is indeed {corret_answer}")  
+    
     
 def main():
     """The main function that runs the application"""
@@ -76,5 +80,6 @@ def main():
         file.close()
     except FileNotFoundError:
         print("Error: word_guess.txt not found")
+
 
 main()    
