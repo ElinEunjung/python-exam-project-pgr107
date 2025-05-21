@@ -1,6 +1,5 @@
 #Importering
 import random
-import re
 
 
 def select_random_line(file):
