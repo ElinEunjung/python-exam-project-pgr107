@@ -48,6 +48,7 @@ def display_question(file):
         # If black used to both check if you 
         if(user_input in letter_display or user_input in wrong_letters):
             print("You have alredy guessed this")
+            continue
         elif(user_input in correct_answer):
             print("Corret")
             letter_display = update_display(correct_answer, user_input, letter_display)
