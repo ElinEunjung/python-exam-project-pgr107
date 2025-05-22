@@ -51,7 +51,7 @@ def display_question(file):
                 wrong_letters.append(user_input)
         
             if(letter_display == correct_answer):
-                victory(correct_answer)
+                print_victory_message(correct_answer)
                 break
         
             n_guesses -= 1
@@ -89,7 +89,7 @@ def update_display(correct_answer, user_input, letter_display):
     return "".join(letter_display)
   
   
-def victory(corret_answer):
+def print_victory_message(corret_answer):
     print(f"You won. the word is indeed {corret_answer}")  
     
     
