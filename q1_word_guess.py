@@ -29,7 +29,7 @@ def display_question(file):
     letter_display =  "_" * len(correct_answer)
     
     # Loop to update the diplay as you guess letters 
-    while n_guesses>0:
+    while n_guesses > 0:
         print(f"The word has {n_letters} and you have {n_guesses} left.\n")
         print(f"Your word: {letter_display}")
         
