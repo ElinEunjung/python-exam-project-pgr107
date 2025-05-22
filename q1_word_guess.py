@@ -30,39 +30,50 @@ def display_question(file):
     
     # Loop to update the diplay as you guess letters 
     while n_guesses > 0:
-        print(f"The word has {n_letters} and you have {n_guesses} left.\n")
+        print(f"The word has letters {n_letters} and you have {n_guesses} guesses left.\n")
         print(f"Your word: {letter_display}")
         
         user_input = input("Letter: ")
         user_input = user_input.lower().strip()
         
-        # If blocks used for input validation
-        if(len(user_input)>1):
-            print("The input is to long, please enter a single letter and then press the enter key")
-            continue
-        if (not user_input.isalpha()):
-            print("Please enter a letter")
-            continue
+        is_valid_input = validate_user_input(user_input)
         
-        # If black used to both check if you 
-        if(user_input in letter_display or user_input in wrong_letters):
-            print("You have alredy guessed this")
-            continue
-        elif(user_input in correct_answer):
-            print("Corret")
-            letter_display = update_display(correct_answer, user_input, letter_display)
+        if(is_valid_input == True):
+            # If black used to both check if you 
+            if(user_input in letter_display or user_input in wrong_letters):
+                print("You have alredy guessed this")
+                continue
+            elif(user_input in correct_answer):
+                print("Corret")
+                letter_display = update_display(correct_answer, user_input, letter_display)
+            else:
+                print("wrong")
+                wrong_letters.append(user_input)
+        
+            if(letter_display == correct_answer):
+                victory(correct_answer)
+                break
+        
+            n_guesses -= 1
+            
         else:
-            print("wrong")
-            wrong_letters.append(user_input)
+            print("Invalid input")
         
-        if(letter_display == correct_answer):
-            victory(correct_answer)
-            break
-        
-        n_guesses -= 1
     
-    if(n_guesses == 0 and letter_display  != correct_answer):
+    if(n_guesses == 0 and letter_display != correct_answer):
         print(f"\nYou lost. The correct word was: {correct_answer}")
+
+
+def validate_user_input(user_input):
+    valid_input = True
+    # If blocks used for input validation
+    if(len(user_input)>1):
+        valid_input = False
+          
+    if (not user_input.isalpha()):
+        valid_input = False
+        
+    return valid_input
 
 
 def update_display(correct_answer, user_input, letter_display):
