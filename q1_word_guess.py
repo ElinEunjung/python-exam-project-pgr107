@@ -9,7 +9,7 @@ def select_random_line(file):
     total_lines = len(lines)
     random_line = random.randint(0, total_lines - 1)
         
-    return lines[random_line]
+    return lines[random_line].strip().lower()
     
     
 def display_question(file):
