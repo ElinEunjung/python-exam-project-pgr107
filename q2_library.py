@@ -1,5 +1,5 @@
 class Book: 
-    """Entity for individual book in the library"""
+    """Class for individual book in the library"""
     def __init__(self, title, author, num_pages, is_borrowed=False):
         self.title = title
         self.author = author
@@ -14,7 +14,7 @@ class Book:
         )
 
 class Library:
-    """Entity responsible for managing books"""
+    """Class for responsible for managing books"""
     def __init__(self):
         self.books = []  # creates a new empty book lists in the library
     
