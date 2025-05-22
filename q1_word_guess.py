@@ -4,13 +4,12 @@ import random
 
 def select_random_line(file):
     """Function that selects a random line from the .txt file as the word for the user to guess"""
-    line = next(file)
-    
-    for num, a_line in enumerate(file, 2):
-        if random.randrange(num):
-            continue
-        line = a_line
-    return line.lower().strip()
+    lines = file.readlines()
+        
+    total_lines = len(lines)
+    random_line = random.randint(0, total_lines - 1)
+        
+    return lines[random_line]
     
     
 def display_question(file):
