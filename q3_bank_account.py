@@ -4,37 +4,58 @@ options = [         # creates a list with pre-defined options
     "3. Withdraw money from your account",
     "4. Add interests to your account",
     "5. Get the current balance of your account",
-    "6. Quit"
+    "6. Add new option",
+    "7. Quit"
 ]
+option_numbers = ["1", "2", "3", "4", "5", "6", "7"]
+
 
 class Menu:
-    """Class for controlling the program flow"""
+    """Class for controlling program flow"""
     def __init__(self):
-        self.options = options
+        # I make a deep copy of global variables here
+        self.options = options.copy()
+        self.option_numbers = option_numbers.copy()
 
     def add_option(self):
-        self.print_menu()
+        """function for adding an option to the menu
+        Though app logic can't be implemented by just adding a text
+        """
         option = input("\nWrite an option you would like to add: ")
-        option = str(len(self.options)+1) + ". "  + option
-        self.options.append(option)
-        print(f"New option {option} added successfully, updated menu:\n ")
-        self.print_menu()
+        if not option.strip():
+            # simple validation, do not allow empty input
+            print("\nInvalid option. Please enter a valid option.")
+            return None
+        last_index = len(self.options) + 1
+
+        # here I update list with numbers
+        self.option_numbers.append(str(last_index))
+        # and here list with full text gets updated
+        option = str(last_index - 1) + ". "  + option
+        self.options.insert(last_index - 2, option)
+        self.options[-1] = f"{last_index}. Quit"
+        print(f"New option {option} added successfully.")
+        return last_index
 
     def get_input(self):
+        """"function for getting user input"""
         self.print_menu()
         user_input = input("Enter your choice with number: ")
-        if user_input in {"1", "2", "3", "4", "5", "6"}:
+        if user_input in self.option_numbers:
             return int(user_input)
         else:
-            print("Invalid input. Please enter number next time.")
+            # \033[91 makes print color red and \033[0m resets it back
+            # Same for rest of code. Is used for wrong user inputs
+            print("\033[91mInvalid input. Please enter number next time.\033[0m")
             return None
 
     def print_menu(self):
         for option in self.options:
             print(option)
 
+
 class BankAccount:
-    """Entity responsible for managing bank accounts"""
+    """Class responsible for managing bank accounts"""
     def __init__(self, balance = 0.0, interest = 0.0):
         self.balance = balance
         self.interest = interest
@@ -71,8 +92,9 @@ class BankAccount:
                                    "use numbers like 2.50: "))
             if interest > 0:
                 self.interest = interest
-                print(f"Interest was added, after 1 year you may earn: "
-                      f"{self.interest / 100 * self.balance}")
+                print(f"Interest was added, now {self}."
+                      f"\nAfter 1 year you may earn: "
+                      f"{(self.interest / 100 * self.balance):.2f}")
             else:
                 print("\033[91mPlease enter a positive "
                       "interest rate next time.\033[0m")
@@ -83,9 +105,9 @@ class BankAccount:
         return self.balance
 
     def __str__(self):
-        interest = f" | Interest rate: {self.interest}%"\
+        interest = f" | Interest rate: {self.interest:.2f}%"\
             if self.interest > 0 else ""
-        return f"Account balance: {self.balance}{interest}"
+        return f"account balance is: {self.balance:.2f}{interest}"
 
 
 if __name__ == "__main__":
@@ -95,8 +117,9 @@ if __name__ == "__main__":
     bank_account_1 = BankAccount()
     menu = Menu()
     user_choice = menu.get_input()
+    exit_option = 7
 
-    while user_choice != 6:
+    while user_choice != exit_option:
         if user_choice is None:
             print("\033[91mPlease enter a valid option.\033[0m")
         elif user_choice == 1:
@@ -108,13 +131,16 @@ if __name__ == "__main__":
         elif user_choice == 4:
             bank_account_1.add_interests()
         elif user_choice == 5:
-            print(bank_account_1.get_balance())
+            print(f"Your current balance is: {bank_account_1.get_balance()}")
+        elif user_choice == 6:
+            new_exit_option = menu.add_option()
+            if new_exit_option is not None:
+                exit_option = new_exit_option
+        else:
+            print("\033[91mNew options logic is not implemented yet\033[0m")
         print()
         user_choice = menu.get_input()
     print("Exiting program")
-
-    # Here I am calling method add_option() to check its functionality
-    menu.add_option()
 
 
 
