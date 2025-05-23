@@ -47,6 +47,7 @@ def display_question(file):
             elif(user_input in correct_answer):
                 print("Corret")
                 letter_display = update_display(correct_answer, user_input, letter_display)
+                n_guesses += 1
             else:
                 print("wrong")
                 wrong_letters.append(user_input)
