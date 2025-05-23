@@ -39,17 +39,18 @@ def display_question(file):
         is_valid_input = validate_user_input(user_input)
         
         if(is_valid_input == True):
-            # If black used to both check if you 
+            # If black used to both check if you have already guessed a letter  
             if(user_input in letter_display or user_input in wrong_letters):
                 print("You have alredy guessed this")
                 continue
+            # elif used to that this logic is run if the if statement above is false 
             elif(user_input in correct_answer):
                 print("Corret")
                 letter_display = update_display(correct_answer, user_input, letter_display)
             else:
                 print("wrong")
                 wrong_letters.append(user_input)
-        
+
             if(letter_display == correct_answer):
                 print_victory_message(correct_answer)
                 break
@@ -67,7 +68,7 @@ def display_question(file):
 def validate_user_input(user_input):
     valid_input = True
     # If blocks used for input validation
-    if(len(user_input)>1):
+    if(len(user_input) > 1):
         valid_input = False
           
     if (not user_input.isalpha()):
