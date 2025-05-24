@@ -3,16 +3,15 @@ import random
 
 def select_random_line(file):
     """Function that selects a random line from the .txt file for the user"""
-        
-    total_lines = len(total_lines)
+    lines = file.readlines()
+    total_lines = len(lines)
     random_line = random.randint(0, total_lines - 1)
-        
-    return total_lines[random_line].strip().lower()
+    return lines[random_line]
     
     
 def display_question(file):
     """Fuction that displays the blanks and the letters as you guess them"""
-    correct_answer = select_random_line(file)
+    correct_answer = select_random_line(file).strip().lower()
     
     # A array of letters not in the answer
     wrong_letters = []
@@ -76,7 +75,7 @@ def validate_user_char(user_char):
     return valid_input
 
 
-def update_display(correct_answer, user_char, letter_dis):
+def update_dis(correct_answer, user_char, letter_dis):
     """Updates the display after the user guesses a letter correctly"""
     letter_dis = list(letter_dis)
     
