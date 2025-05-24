@@ -13,6 +13,7 @@ class Book:
             f'| Pages: {self.num_pages} | Status: {status}>\n'
         )
 
+
 class Library:
     """Class responsible for managing books"""
     def __init__(self):
