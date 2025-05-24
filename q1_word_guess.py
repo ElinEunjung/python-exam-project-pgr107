@@ -1,15 +1,13 @@
 #Importering
 import random
 
-
 def select_random_line(file):
-    """Function that selects a random line from the .txt file as the word for the user to guess"""
-    lines = file.readlines()
+    """Function that selects a random line from the .txt file for the user"""
         
-    total_lines = len(lines)
+    total_lines = len(total_lines)
     random_line = random.randint(0, total_lines - 1)
         
-    return lines[random_line].strip().lower()
+    return total_lines[random_line].strip().lower()
     
     
 def display_question(file):
@@ -26,33 +24,33 @@ def display_question(file):
     n_guesses = n_letters
     
     # The blank lines used as a plaseholder for the letters of the chosen word
-    letter_display =  "_" * len(correct_answer)
+    letter_dis =  "_" * len(correct_answer)
     
     # Loop to update the display as you guess letters 
     while n_guesses > 0:
-        print(f"The word has {n_letters} letters and you have {n_guesses} guesses left.\n")
-        print(f"Your word: {letter_display}")
+        print(f"You have {n_letters} letters and you have {n_guesses} guesses.\n")
+        print(f"Your word: {letter_dis}")
         
-        user_input = input("Letter: ")
-        user_input = user_input.lower().strip()
+        user_char = input("Letter: ")
+        user_char = user_char.lower().strip()
         
-        is_valid_input = validate_user_input(user_input)
+        is_valid_input = validate_user_char(user_char)
         
-        if(is_valid_input):
-            # If black used to both check if you have already guessed a letter  
-            if user_input in letter_display or user_input in wrong_letters :
-                print("You have alredy guessed this")
+        if is_valid_input :
+            # If block used to check if you have already guessed a letter  
+            if user_char in letter_dis or user_char in wrong_letters :
+                print("You have already guessed this")
                 continue
-            # elif used to that this logic is run if the if statement above is false 
-            elif user_input in correct_answer:
+            # Elif used, logic will run if the if statement above is false 
+            elif user_char in correct_answer:
                 print("Correct")
-                letter_display = update_display(correct_answer, user_input, letter_display)
+                letter_dis = update_dis(correct_answer, user_char, letter_dis)
                 n_guesses += 1
             else:
                 print("wrong")
-                wrong_letters.append(user_input)
+                wrong_letters.append(user_char)
 
-            if letter_display == correct_answer:
+            if letter_dis == correct_answer:
                 print_victory_message(correct_answer)
                 break
         
@@ -62,33 +60,33 @@ def display_question(file):
             print("Invalid input")
         
     
-    if n_guesses == 0 and letter_display != correct_answer:
+    if n_guesses == 0 and letter_dis != correct_answer:
         print(f"\nYou lost. The correct word was: {correct_answer}")
 
 
-def validate_user_input(user_input):
+def validate_user_char(user_char):
     valid_input = True
     # If blocks used for input validation
-    if len(user_input) > 1:
+    if len(user_char) > 1:
         valid_input = False
           
-    if not user_input.isalpha():
+    if not user_char.isalpha():
         valid_input = False
         
     return valid_input
 
 
-def update_display(correct_answer, user_input, letter_display):
-    """Function that updates the display when the user gueesses a letter correctly"""
-    letter_display = list(letter_display)
+def update_display(correct_answer, user_char, letter_dis):
+    """Updates the display after the user guesses a letter correctly"""
+    letter_dis = list(letter_dis)
     
     for i in range(len(correct_answer)):
-        if correct_answer[i] == user_input:
-            letter_display[i] = user_input
+        if correct_answer[i] == user_char:
+            letter_dis[i] = user_char
         
     
     # got the idea of "".join() from here https://stackoverflow.com/questions/1228299/changing-a-character-in-a-string   
-    return "".join(letter_display)
+    return "".join(letter_dis)
   
   
 def print_victory_message(corret_answer):
@@ -108,4 +106,4 @@ def main():
     except FileNotFoundError:
         print("Error: word_guess.txt not found")
 
-main()    
+main()
