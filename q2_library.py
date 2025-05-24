@@ -14,9 +14,9 @@ class Book:
         )
 
 class Library:
-    """Class for responsible for managing books"""
+    """Class responsible for managing books"""
     def __init__(self):
-        self.books = []  # creates a new empty book lists in the library
+        self.books = []    # Creates a new empty book lists in the library
     
     def add_book(self, book):                     
         self.books.append(book)
@@ -25,7 +25,7 @@ class Library:
     def remove_book(self, title):
         book = self.get_book_by_title(title)
         if not book:
-            print(f"No book found title {title} in the library.\n")
+            print(f"No book found by title {title} in the library.\n")
             return
         else: 
             self.books.remove(book)
@@ -53,7 +53,7 @@ class Library:
         if not book:
             return
         
-        # checks if the book is unavalible (borrowed)        
+        # Checks if the book is unavalible (borrowed)        
         if book.is_borrowed == True: # add "== True" for clarity
             book.is_borrowed = False # update status to avaliable
             # provide message for for check-in    
@@ -69,7 +69,7 @@ class Library:
         if not book:
             return
         
-        # checks if the books is avalialbe
+        # Checks if the books is avalialbe
         if book.is_borrowed == False:
             book.is_borrowed = True # update status to unavaliable
             # provide message for for check-out   
@@ -98,10 +98,10 @@ if __name__ == "__main__":
        It's ok to delete (__name__ == "__main__") for our exam 
        but I included it to show some professionalism"""
     
-    # create a Library instance
+    # Create a Library instance
     myLibrary = Library()  
     
-    # add multiple books to the library
+    # Add multiple books to the library
     b1 = Book("The Art of War", "Sun Tzu", 150)
     b2 = Book("Tao Te Ching", "Lao zi", 100)
     b3 = Book("Dream of the Red Chamber", "Cao Xueqin", 550)  
@@ -109,17 +109,17 @@ if __name__ == "__main__":
     myLibrary.add_book(b2)
     myLibrary.add_book(b3)
    
-    # attempt to check out a book
-    myLibrary.check_out("Vegetarian") # not registered book
+    # Attempt to check out a book
+    myLibrary.check_out("Vegetarian")  # not registered book
     myLibrary.check_out("The Art of War")
 
-    # attempt to return a book
+    # Attempt to return a book
     myLibrary.check_in("The Art of War")
 
-    # remove a book from the library
+    # Remove a book from the library
     myLibrary.remove_book(b2.title)
        
-    # print the list of books to verify the results
+    # Print the list of books to verify the results
     print(myLibrary)
 
         
