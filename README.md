@@ -30,16 +30,16 @@ The exam consisted of four individual programming tasks:
 
 ## ✍️ Task Distribution and Code Review
 
-Tasks were distributed based on complexity to ensure a fair workload. Each team member also performed sub-review, which includeed:
-- Funtionality testing
+Tasks were distributed based on complexity to ensure a fair workload. Each team member also performed sub-review, which included:
+- Functionality testing
 - Adding comments and Pythonic docstrings (`"""Explnation"""`) for all function/class
 - Implementing exception handling (`try`-`except` blocks).
 
-| Team member  | Main Responsiblity | Sub review Tasks |
-| -------------| ------------------ |------------------| 
-| Athiththiyan | Q1                 | Q2, Q3, Q4       |
-| Elin         | Q2                 | Q1, Q3, Q4       | 
-| Ivan         | Q3 + Q4            | Q1, Q2           | 
+| Team member  | Main Responsibility | Sub-review Tasks |
+| -------------| ------------------- |------------------| 
+| Athiththiyan | Q1                  | Q2, Q3, Q4       |
+| Elin         | Q2                  | Q1, Q3, Q4       | 
+| Ivan         | Q3 + Q4             | Q1, Q2           | 
 
 
 ## 🤝 Team Collaboration & Workflow
@@ -70,9 +70,28 @@ We believe this project reflects not only our **technical ability** but also our
 | `docs`                | Supplementary documents for projet guidelines (by Elin)        |
 
 
+## 🎓 What We Learned
+
+This project wasn’t just a programming exercise — it was a chance to experience real software teamwork. Through this process, we learned:
+
+- How to manage GitHub collaboration with pull requests and protected branch
+- The value of peer reviews in improving code quality and catching bugs early
+- How to write clean, Pythonic code with documentation and modular structure
+- The importance of clear communication, shared standards, and mutual trust
+- How to split tasks fairly and hold each other accountable without losing team spirit
+
+We’re proud not just of the result, but of how we worked together to get there.
+
+
 ## ✅ Notes
 
 - All code follows the PGR107 final exam requirements and standard Python coding conventions.
 - Each team member completed their assigned task(s) and contributed to peer review for at least two additional tasks.
 - Plagiarism was strictly avoided, as per the exam regulations.
+
+
+> **📄 Additional Documentation:**  
+> The `README.md` file and the contents of the `docs/` folder were created voluntarily and were **not required by the exam**.  
+> They were added to showcase real-world collaboration, professional workflow, and clear documentation practices — values we consider essential in software development.
+
 
