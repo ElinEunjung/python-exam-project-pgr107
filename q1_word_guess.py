@@ -43,7 +43,7 @@ def display_question(file):
             # Elif used, logic will run if the if statement above is false 
             elif user_char in correct_answer:
                 print("Correct")
-                letter_dis = update_dis(correct_answer, user_char, letter_dis)
+                letter_dis = update_display(correct_answer, user_char, letter_dis)
                 n_guesses += 1
             else:
                 print("wrong")
@@ -62,7 +62,6 @@ def display_question(file):
     if n_guesses == 0 and letter_dis != correct_answer:
         print(f"\nYou lost. The correct word was: {correct_answer}")
 
-
 def validate_user_char(user_char):
     valid_input = True
     # If blocks used for input validation
@@ -74,8 +73,8 @@ def validate_user_char(user_char):
         
     return valid_input
 
-
-def update_dis(correct_answer, user_char, letter_dis):
+def update_display (correct_answer, 
+                user_char, letter_dis):
     """Updates the display after the user guesses a letter correctly"""
     letter_dis = list(letter_dis)
     
@@ -84,7 +83,8 @@ def update_dis(correct_answer, user_char, letter_dis):
             letter_dis[i] = user_char
         
     
-    # got the idea of "".join() from here https://stackoverflow.com/questions/1228299/changing-a-character-in-a-string   
+    # Got the idea of "".join() from here:
+    # https://stackoverflow.com/questions/1228299/changing-a-character-in-a-string   
     return "".join(letter_dis)
   
   
