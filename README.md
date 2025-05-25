@@ -52,7 +52,7 @@ While each member had clear implementation duties, our **collaboration was the k
 
 > 🚫 **Note:** The `main` branch is protected.  
 > All code contributions must be made via Pull Requests and require **2 approved peer reviews** before merging.  
-> 📌 See [Git Workflow](./GIT_WORKFLOW.md) and [Peer Review Process](./PEER_REVIEW_PROCESS.md) for details.
+> 📌 See [Git Workflow](docs/GIT_WORKFLOW.md) and [Peer Review Process](docs/PEER_REVIEW_PROCESS.md) for details.
 
 We believe this project reflects not only our **technical ability** but also our **professional team collaboration**, which we consider essential for real-world software development.
 
