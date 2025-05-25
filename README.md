@@ -1,7 +1,5 @@
 ![Python Version](https://img.shields.io/badge/python-3.12.7%2B-blue)
 ![Status](https://img.shields.io/badge/status-draft-brightgreen)
-![School](https://img.shields.io/badge/Kristiania%20University%20College-PGR107-red)
-
 
 # 🐍 Python Exam Project – PGR107
 
@@ -39,6 +37,8 @@ The exam consisted of four individual programming tasks. Responsibilities were d
 
 ## ✅ Notes
 
+
 - All code follows the PGR107 exam requirements and Python conventions.
 - Tasks were distributed based on complexity to ensure a fair workload.
 - Each team member completed one or two main tasks and participated in code review for two additional tasks.
+
