@@ -54,8 +54,6 @@ While each member had clear implementation duties, our **collaboration was the k
 > All code contributions must be made via Pull Requests and require **2 approved peer reviews** before merging.  
 > 📌 See [Git Workflow](docs/GIT_WORKFLOW.md) and [Peer Review Process](docs/PEER_REVIEW_PROCESS.md) for details.
 
-We believe this project reflects not only our **technical ability** but also our **professional team collaboration**, which we consider essential for real-world software development.
-
 
 ## 📁 Project Structure
 
@@ -92,6 +90,6 @@ We’re proud not just of the result, but of how we worked together to get there
 
 > **📄 Additional Documentation:**  
 > The `README.md` file and the contents of the `docs/` folder were created voluntarily and were **not required by the exam**.  
-> They were added to showcase real-world collaboration, professional workflow, and clear documentation practices — values we consider essential in software development.
+> They were added to showcase our collaboration, professional workflow, and clear documentation practices — values we consider essential in software development.
 
 
