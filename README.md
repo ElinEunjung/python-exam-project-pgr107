@@ -73,6 +73,6 @@ We believe this project reflects not only our **technical ability** but also our
 ## ✅ Notes
 
 - All code follows the PGR107 final exam requirements and standard Python coding conventions.
-- Each team member completed their assigned task(s) and contributed to peer review for two additional tasks.
+- Each team member completed their assigned task(s) and contributed to peer review for at least two additional tasks.
 - Plagiarism was strictly avoided, as per the exam regulations.
 
