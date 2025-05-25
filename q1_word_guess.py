@@ -43,7 +43,8 @@ def display_question(file):
             # Elif used, logic will run if the if statement above is false 
             elif user_char in correct_answer:
                 print("Correct")
-                letter_display = update_display(correct_answer, user_char, letter_display)
+                letter_display = update_display(correct_answer, 
+                user_char, letter_display)
                 n_guesses += 1
             else:
                 print("wrong")
