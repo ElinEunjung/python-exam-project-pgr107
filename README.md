@@ -38,6 +38,7 @@ Tasks were distributed based on complexity to ensure a fair workload. Each team 
 | Elin         | Q2                  | Q1, Q3, Q4       |
 | Ivan         | Q3 + Q4             | Q1, Q2           |
 
+
 ## 🤝 Team Collaboration & Workflow
 
 While each member had clear implementation duties, our **collaboration was the key to success**:
@@ -54,15 +55,16 @@ While each member had clear implementation duties, our **collaboration was the k
 
 ## 📁 Project Structure
 
-| File/Folder          | Description                                              |
-| -------------------- | -------------------------------------------------------- |
-| `q1_word_guess.py`   | Word Guessing Game (by Athiththiyan)                     |
-| `q2_library.py`      | Library System (by Elin)                                 |
-| `q3_bank_account.py` | Bank Account System (by Ivan)                            |
-| `q4_palindrome.py`   | Palindrome Checker (by Ivan)                             |
-| `word_guess.txt`     | Word list for Q1 (by Athiththiyan)                       |
-| `README.md`          | Project overview and documentation (by Elin)             |
-| `docs`               | Supplementary documents for project guidelines (by Elin) |
+| File/Folder           | Description                                                    |
+|-----------------------|----------------------------------------------------------------|
+| `q1_word_guess.py`    | Word Guessing Game (by Athiththiyan)                           |
+| `q2_library.py`       | Library System  (by Elin)                                      |
+| `q3_bank_account.py`  | Bank Account System  (by Ivan)                                 |
+| `q4_palindrome.py`    | Palindrome Checker   (by Ivan)                                 |
+| `word_guess.txt`      | Word list for Q1 (by Athiththiyan)                             |
+| `README.md`           | Project overview and documentation (by Elin)                   |
+| `docs`                | Supplementary documents for project guidelines (by Elin)        |
+
 
 ## 🎓 What We Learned
 
