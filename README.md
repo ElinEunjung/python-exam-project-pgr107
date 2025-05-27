@@ -32,7 +32,7 @@ The exam consisted of four individual programming tasks:
 
 Tasks were distributed based on complexity to ensure a fair workload. Each team member also performed sub-review, which included:
 - Functionality testing
-- Adding comments and Pythonic docstrings (`"""Explnation"""`) for all function/class
+- Adding comments and Pythonic docstrings (`"""Explanation"""`) for all function/class
 - Implementing exception handling (`try`-`except` blocks).
 
 | Team member  | Main Responsibility | Sub-review Tasks |
@@ -65,7 +65,7 @@ While each member had clear implementation duties, our **collaboration was the k
 | `q4_palindrome.py`    | Palindrome Checker   (by Ivan)                                 |
 | `word_guess.txt`      | Word list for Q1 (by Athiththiyan)                             |
 | `README.md`           | Project overview and documentation (by Elin)                   |
-| `docs`                | Supplementary documents for projet guidelines (by Elin)        |
+| `docs`                | Supplementary documents for project guidelines (by Elin)        |
 
 
 ## 🎓 What We Learned
