@@ -13,6 +13,7 @@ class Book:
             f'| Pages: {self.num_pages} | Status: {status}>\n'
         )
 
+
 class Library:
     """Class responsible for managing books"""
     def __init__(self):
@@ -56,7 +57,8 @@ class Library:
         # Checks if the book is unavalible (borrowed)        
         if book.is_borrowed == True: # add "== True" for clarity
             book.is_borrowed = False # update status to avaliable
-            # provide message for for check-in    
+
+            # provide message for check-in
             print(f"The book <{title}> has been checked in successfully.\n" )            
             return
         else: 
@@ -72,7 +74,8 @@ class Library:
         # Checks if the books is avalialbe
         if book.is_borrowed == False:
             book.is_borrowed = True # update status to unavaliable
-            # provide message for for check-out   
+
+            # provide message for for check-out
             print(f"The book <{title}> has been checked out successfully.\n" )            
             return
         else: 
@@ -96,7 +99,9 @@ class Library:
 if __name__ == "__main__":
     """Only runs if this script is the main file 
        It's ok to delete (__name__ == "__main__") for our exam 
-       but I included it to show some professionalism"""
+       but I included it to show some professionalism
+       """
+
     
     # Create a Library instance
     myLibrary = Library()  
