@@ -64,6 +64,7 @@ def display_question(file):
         print(f"\nYou lost. The correct word was: {correct_answer}")
 
 def validate_user_char(user_char):
+    """Function that validates user input"""
     valid_input = True
     # If blocks used for input validation
     if len(user_char) > 1:
@@ -90,6 +91,7 @@ def update_display (correct_answer,
   
   
 def print_victory_message(corret_answer):
+    """Function that prints victory message"""
     print(f"You won. the word is indeed {corret_answer}")  
     
     
